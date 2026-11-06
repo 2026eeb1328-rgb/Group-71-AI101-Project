@@ -1,0 +1,52 @@
+{
+    "target_column": "price_range",
+    "class_mapping": {
+        "0": "low cost",
+        "1": "medium cost",
+        "2": "high cost",
+        "3": "very high cost"
+    },
+    "random_state": 42,
+    "split_ratio": {
+        "train": 0.7,
+        "validation": 0.15,
+        "test": 0.15
+    },
+    "cv": {
+        "type": "StratifiedKFold",
+        "n_splits": 5,
+        "shuffle": true
+    },
+    "feature_selection": "SelectKBest(mutual_info_classif)",
+    "selected_k": 18,
+    "selected_features": [
+        "battery_power",
+        "clock_speed",
+        "fc",
+        "four_g",
+        "int_memory",
+        "m_dep",
+        "mobile_wt",
+        "n_cores",
+        "pc",
+        "px_height",
+        "px_width",
+        "ram",
+        "sc_h",
+        "sc_w",
+        "talk_time",
+        "three_g",
+        "touch_screen",
+        "wifi"
+    ],
+    "logistic_regression": {
+        "solver": "lbfgs",
+        "multi_class": "multinomial",
+        "C": 100.0,
+        "max_iter": 3000
+    },
+    "best_cv_macro_f1": 0.9550316897844683,
+    "validation_accuracy": 0.9766666666666667,
+    "validation_macro_f1": 0.9767103723128436,
+    "note": "Observed on supplied Data.csv. Test set was not evaluated. Re-run notebook in the repository to reproduce."
+}
